@@ -1,0 +1,66 @@
+/* Main container for the Pokémon cards */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Set a higher min-width for cards */
+    gap: 1.5rem; /* Space between cards */
+    padding: 1rem;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+/* Navigation controls container */
+.navigation {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Button styles */
+button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #333333;
+    background-color: #f5f5f5;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #e0e0e0;
+    border-color: #b0b0b0;
+}
+
+/* Disabled button styles */
+button:disabled {
+    background-color: #f5f5f5;
+    color: #aaaaaa;
+    border-color: #dddddd;
+    cursor: not-allowed;
+}
+
+/* Active button (current page indicator) */
+button.active {
+    background-color: #d0f0d0;
+    color: #005500;
+    border: 1px solid #a0d0a0;
+    font-weight: bold;
+}
+
+/* Responsive grid for smaller screens */
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjusted for smaller screens */
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
