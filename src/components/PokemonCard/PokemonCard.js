@@ -37,9 +37,6 @@ const PokemonCard = ({ item }) => {
         </li>
     ));
 
-    // Display Evolution Info (if any)
-    const evolvesFrom = cardData.evolves_from_species ? cardData.evolves_from_species.name : 'None';
-
     return (
         <div className={`${styles.card}`} style={{ backgroundColor }} data-type={primaryType}>
             <h2 className={styles.name}>{cardData.name}</h2>
@@ -57,7 +54,6 @@ const PokemonCard = ({ item }) => {
             <p>Moves: {moves}</p>
             <Player audioUrl={cardData.cries.latest} />
 
-            {/* Optional shiny sprite */}
             {cardData.sprites.front_shiny && (
                 <img
                     className={styles.shinyImage}
